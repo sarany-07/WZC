@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> WZC Speakers Apply</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+        .form-container{
+            font-family: 'Poppins', sans-serif !important;
+            font-size: 18px !important;
+            padding: 30px;
+            color: #494949 !important;
+        }
+        .a-block, .b-block {
+            display: flex;
+            column-gap: 24px;
+            margin-bottom: 12px;
+            
+            justify-content: space-between;
+        }
+        .a-1 {
+            width: 49%;
+            display: flex;
+            flex-direction: column;
+        }
+        /* .label-cls{
+            
+        } */
+        .input, textarea, select {
+            margin-top: 8px;
+            font-size: 18px;
+            padding: 6px 24px;
+            width: 100%;
+            background-color: #f6f7fa !important;
+            border: 1px solid #eaecf1 !important;
+            border-radius: 6px !important;
+            font-family: 'Poppins', sans-serif;
+            transition: border 0.3s;
+            color: #494949 !important;
+        }
+        .input:focus, textarea:focus, select:focus {
+            border: 1px solid #9bb1ff !important;
+            outline: none;
+        }
+        .AlertPara {
+            font-size: 8px;
+            color: red;
+            /* display: none; */
+            visibility: hidden;
+            margin: 0px;
+           
+        }
+        .full-width {
+            width: 100%;
+        }
+        .checkbox-container {
+            margin-bottom: 20px;
+        }
+        .submit-btn {
+            background-color: #731819 ;
+            color: #fff;
+            border: none;
+            padding: 12px 30px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #E89D2B;
+        }
+
+
+        @media screen and (max-width: 768px) {
+
+            .form-container{
+                padding: 20px;
+            }
+            
+            .a-block, .b-block {
+                flex-direction: row;
+                gap: 12px;
+                margin-bottom: 12px;
+                flex-wrap: wrap;
+            }
+            .a-1 {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+            }
+
+        }
+
+
+    </style>
+</head>
+<body data-rsssl=1 data-rsssl=1>
+    <div class="form-container">
+        <form method="post" name="contact-form" id="contact-form-id" enctype="multipart/form-data">
+            <div class="form-body">
+                <div class="a-block">
+                    <div class="a-1">
+                        <label class="label-cls" for="fullName-id">Full name <span style="color: red;">*</span></label>
+                        <input type="text" name="Name" placeholder="Full name" id="fullName-id" class="input"/>
+                        <p class="AlertPara" id="name-error">This field is required.</p>
+                    </div>
+                    <div class="a-1"> 
+                        <label class="label-cls" for="dob-id">Date of birth <span style="color: red;">*</span></label>
+                        <input type="date" name="DOB" id="dob-id" class="input" />
+                        <p class="AlertPara" id="dob-error">This field is required.</p>
+                    </div>
+                </div>
+
+                <div class="a-block">
+                    <div class="a-1">
+                        <label class="label-cls" for="email-id">Email ID <span style="color: red;">*</span></label>
+                        <input type="email" name="Email" placeholder="Email ID" id="email-id" class="input"/>
+                        <p class="AlertPara" id="email-error">Please enter a valid email.</p>
+                    </div>
+                    <div class="a-1"> 
+                        <label class="label-cls" for="gender-id">Gender <span style="color: red;">*</span></label>
+                        <select name="Gender" id="gender-id" class="input">
+                            <option value="">Select your gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Others</option>
+                            <option value="prefer-not">Prefer not to answer</option>
+                        </select>
+                        <p class="AlertPara" id="gender-error">Enter a valid gender.</p>
+                    </div>
+                </div>
+
+                <div class="b-block">
+                    <div class="full-width">
+                        <label class="label-cls" for="phone-id">Select a country and enter phone number <span style="color: red;">*</span></label>
+                        <div style="display: flex; column-gap: 10px; width: 100%;">
+                            <select name="Country" id="country-id" class="input" style="width: 30%">
+                                <option value="">Select a country</option>
+                                <option value="AF" data-code="+93">Afghanistan (AF)</option>
+                                <option value="AL" data-code="+355">Albania (AL)</option>
+                                <option value="DZ" data-code="+213">Algeria (DZ)</option>
+                                <option value="AD" data-code="+376">Andorra (AD)</option>
+                                <option value="AO" data-code="+244">Angola (AO)</option>
+                                <option value="AI" data-code="+1 264">Anguilla (AI)</option>
+                                <option value="AG" data-code="+1 268">
+                                Antigua and Barbuda (AG)
+                                </option>
+                                <option value="AR" data-code="+54">Argentina (AR)</option>
+                                <option value="AM" data-code="+374">Armenia (AM)</option>
+                                <option value="AW" data-code="+297">Aruba (AW)</option>
+                                <option value="AU" data-code="+61">Australia (AU)</option>
+                                <option value="AT" data-code="+43">Austria (AT)</option>
+                                <option value="AZ" data-code="+994">Azerbaijan (AZ)</option>
+                                <option value="BS" data-code="+1 242">Bahamas (BS)</option>
+                                <option value="BH" data-code="+973">Bahrain (BH)</option>
+                                <option value="BD" data-code="+880">Bangladesh (BD)</option>
+                                <option value="BB" data-code="+1 246">Barbados (BB)</option>
+                                <option value="BY" data-code="+375">Belarus (BY)</option>
+                                <option value="BE" data-code="+32">Belgium (BE)</option>
+                                <option value="BZ" data-code="+501">Belize (BZ)</option>
+                                <option value="BJ" data-code="+229">Benin (BJ)</option>
+                                <option value="BM" data-code="+1 441">Bermuda (BM)</option>
+                                <option value="BT" data-code="+975">Bhutan (BT)</option>
+                                <option value="BO" data-code="+591">Bolivia (BO)</option>
+                                <option value="BA" data-code="+387">
+                                Bosnia and Herzegovina (BA)
+                                </option>
+                                <option value="BW" data-code="+267">Botswana (BW)</option>
+                                <option value="BR" data-code="+55">Brazil (BR)</option>
+                                <option value="BN" data-code="+673">Brunei (BN)</option>
+                                <option value="BG" data-code="+359">Bulgaria (BG)</option>
+                                <option value="BF" data-code="+226">Burkina Faso (BF)</option>
+                                <option value="BI" data-code="+257">Burundi (BI)</option>
+                                <option value="CV" data-code="+238">Cabo Verde (CV)</option>
+                                <option value="KH" data-code="+855">Cambodia (KH)</option>
+                                <option value="CM" data-code="+237">Cameroon (CM)</option>
+                                <option value="CA" data-code="+1">Canada (CA)</option>
+                                <option value="KY" data-code="+1 345">Cayman Islands (KY)</option>
+                                <option value="CF" data-code="+236">
+                                Central African Republic (CF)
+                                </option>
+                                <option value="TD" data-code="+235">Chad (TD)</option>
+                                <option value="CL" data-code="+56">Chile (CL)</option>
+                                <option value="CN" data-code="+86">China (CN)</option>
+                                <option value="CO" data-code="+57">Colombia (CO)</option>
+                                <option value="KM" data-code="+269">Comoros (KM)</option>
+                                <option value="CD" data-code="+243">
+                                Congo, Democratic Republic of the (CD)
+                                </option>
+                                <option value="CG" data-code="+242">
+                                Congo, Republic of the (CG)
+                                </option>
+                                <option value="CR" data-code="+506">Costa Rica (CR)</option>
+                                <option value="CI" data-code="+225">Cote d'Ivoire (CI)</option>
+                                <option value="HR" data-code="+385">Croatia (HR)</option>
+                                <option value="CU" data-code="+53">Cuba (CU)</option>
+                                <option value="CW" data-code="+599">Curaçao (CW)</option>
+                                <option value="CY" data-code="+357">Cyprus (CY)</option>
+                                <option value="CZ" data-code="+420">Czech Republic (CZ)</option>
+                                <option value="DK" data-code="+45">Denmark (DK)</option>
+                                <option value="DJ" data-code="+253">Djibouti (DJ)</option>
+                                <option value="DM" data-code="+1 767">Dominica (DM)</option>
+                                <option value="DO" data-code="+1 809">
+                                Dominican Republic (DO)
+                                </option>
+                                <option value="EC" data-code="+593">Ecuador (EC)</option>
+                                <option value="EG" data-code="+20">Egypt (EG)</option>
+                                <option value="SV" data-code="+503">El Salvador (SV)</option>
+                                <option value="GQ" data-code="+240">Equatorial Guinea (GQ)</option>
+                                <option value="ER" data-code="+291">Eritrea (ER)</option>
+                                <option value="EE" data-code="+372">Estonia (EE)</option>
+                                <option value="ET" data-code="+251">Ethiopia (ET)</option>
+                                <option value="FK" data-code="+500">
+                                Falkland Islands (Malvinas) (FK)
+                                </option>
+                                <option value="FO" data-code="+298">Faroe Islands (FO)</option>
+                                <option value="FJ" data-code="+679">Fiji (FJ)</option>
+                                <option value="FI" data-code="+358">Finland (FI)</option>
+                                <option value="FR" data-code="+33">France (FR)</option>
+                                <option value="GF" data-code="+594">French Guiana (GF)</option>
+                                <option value="PF" data-code="+689">French Polynesia (PF)</option>
+                                <option value="GA" data-code="+241">Gabon (GA)</option>
+                                <option value="GM" data-code="+220">Gambia (GM)</option>
+                                <option value="GE" data-code="+995">Georgia (GE)</option>
+                                <option value="DE" data-code="+49">Germany (DE)</option>
+                                <option value="GH" data-code="+233">Ghana (GH)</option>
+                                <option value="GI" data-code="+350">Gibraltar (GI)</option>
+                                <option value="GR" data-code="+30">Greece (GR)</option>
+                                <option value="GL" data-code="+299">Greenland (GL)</option>
+                                <option value="GD" data-code="+1 473">Grenada (GD)</option>
+                                <option value="GP" data-code="+590">Guadeloupe (GP)</option>
+                                <option value="GU" data-code="+1 671">Guam (GU)</option>
+                                <option value="GT" data-code="+502">Guatemala (GT)</option>
+                                <option value="GG" data-code="+44">Guernsey (GG)</option>
+                                <option value="GN" data-code="+224">Guinea (GN)</option>
+                                <option value="GW" data-code="+245">Guinea-Bissau (GW)</option>
+                                <option value="GY" data-code="+592">Guyana (GY)</option>
+                                <option value="HT" data-code="+509">Haiti (HT)</option>
+                                <option value="HN" data-code="+504">Honduras (HN)</option>
+                                <option value="HK" data-code="+852">Hong Kong (HK)</option>
+                                <option value="HU" data-code="+36">Hungary (HU)</option>
+                                <option value="IS" data-code="+354">Iceland (IS)</option>
+                                <option value="IN" data-code="+91">India (IN)</option>
+                                <option value="ID" data-code="+62">Indonesia (ID)</option>
+                                <option value="IR" data-code="+98">
+                                Iran, Islamic Republic of (IR)
+                                </option>
+                                <option value="IQ" data-code="+964">Iraq (IQ)</option>
+                                <option value="IE" data-code="+353">Ireland (IE)</option>
+                                <option value="IM" data-code="+44">Isle of Man (IM)</option>
+                                <option value="IL" data-code="+972">Israel (IL)</option>
+                                <option value="IT" data-code="+39">Italy (IT)</option>
+                                <option value="JM" data-code="+1 876">Jamaica (JM)</option>
+                                <option value="JP" data-code="+81">Japan (JP)</option>
+                                <option value="JE" data-code="+44">Jersey (JE)</option>
+                                <option value="JO" data-code="+962">Jordan (JO)</option>
+                                <option value="KZ" data-code="+7">Kazakhstan (KZ)</option>
+                                <option value="KE" data-code="+254">Kenya (KE)</option>
+                                <option value="KI" data-code="+686">Kiribati (KI)</option>
+                                <option value="KP" data-code="+850">
+                                Korea, Democratic People's Republic of (KP)
+                                </option>
+                                <option value="KR" data-code="+82">Korea, Republic of (KR)</option>
+                                <option value="KW" data-code="+965">Kuwait (KW)</option>
+                                <option value="KG" data-code="+996">Kyrgyzstan (KG)</option>
+                                <option value="LA" data-code="+856">
+                                Lao People's Democratic Republic (LA)
+                                </option>
+                                <option value="LV" data-code="+371">Latvia (LV)</option>
+                                <option value="LB" data-code="+961">Lebanon (LB)</option>
+                                <option value="LS" data-code="+266">Lesotho (LS)</option>
+                                <option value="LR" data-code="+231">Liberia (LR)</option>
+                                <option value="LY" data-code="+218">Libya (LY)</option>
+                                <option value="LI" data-code="+423">Liechtenstein (LI)</option>
+                                <option value="LT" data-code="+370">Lithuania (LT)</option>
+                                <option value="LU" data-code="+352">Luxembourg (LU)</option>
+                                <option value="MO" data-code="+853">Macao (MO)</option>
+                                <option value="MK" data-code="+389">
+                                Macedonia, the former Yugoslav Republic of (MK)
+                                </option>
+                                <option value="MG" data-code="+261">Madagascar (MG)</option>
+                                <option value="MW" data-code="+265">Malawi (MW)</option>
+                                <option value="MY" data-code="+60">Malaysia (MY)</option>
+                                <option value="MV" data-code="+960">Maldives (MV)</option>
+                                <option value="ML" data-code="+223">Mali (ML)</option>
+                                <option value="MT" data-code="+356">Malta (MT)</option>
+                                <option value="MH" data-code="+692">Marshall Islands (MH)</option>
+                                <option value="MQ" data-code="+596">Martinique (MQ)</option>
+                                <option value="MR" data-code="+222">Mauritania (MR)</option>
+                                <option value="MU" data-code="+230">Mauritius (MU)</option>
+                                <option value="YT" data-code="+262">Mayotte (YT)</option>
+                                <option value="MX" data-code="+52">Mexico (MX)</option>
+                                <option value="FM" data-code="+691">
+                                Micronesia, Federated States of (FM)
+                                </option>
+                                <option value="MD" data-code="+373">
+                                Moldova, Republic of (MD)
+                                </option>
+                                <option value="MC" data-code="+377">Monaco (MC)</option>
+                                <option value="MN" data-code="+976">Mongolia (MN)</option>
+                                <option value="ME" data-code="+382">Montenegro (ME)</option>
+                                <option value="MS" data-code="+1 664">Montserrat (MS)</option>
+                                <option value="MA" data-code="+212">Morocco (MA)</option>
+                                <option value="MZ" data-code="+258">Mozambique (MZ)</option>
+                                <option value="MM" data-code="+95">Myanmar (MM)</option>
+                                <option value="NA" data-code="+264">Namibia (NA)</option>
+                                <option value="NR" data-code="+674">Nauru (NR)</option>
+                                <option value="NP" data-code="+977">Nepal (NP)</option>
+                                <option value="NL" data-code="+31">Netherlands (NL)</option>
+                                <option value="NC" data-code="+687">New Caledonia (NC)</option>
+                                <option value="NZ" data-code="+64">New Zealand (NZ)</option>
+                                <option value="NI" data-code="+505">Nicaragua (NI)</option>
+                                <option value="NE" data-code="+227">Niger (NE)</option>
+                                <option value="NG" data-code="+234">Nigeria (NG)</option>
+                                <option value="NU" data-code="+683">Niue (NU)</option>
+                                <option value="NF" data-code="+672">Norfolk Island (NF)</option>
+                                <option value="MP" data-code="+1 670">
+                                Northern Mariana Islands (MP)
+                                </option>
+                                <option value="NO" data-code="+47">Norway (NO)</option>
+                                <option value="OM" data-code="+968">Oman (OM)</option>
+                                <option value="PK" data-code="+92">Pakistan (PK)</option>
+                                <option value="PW" data-code="+680">Palau (PW)</option>
+                                <option value="PS" data-code="+970">
+                                Palestine, State of (PS)
+                                </option>
+                                <option value="PA" data-code="+507">Panama (PA)</option>
+                                <option value="PG" data-code="+675">Papua New Guinea (PG)</option>
+                                <option value="PY" data-code="+595">Paraguay (PY)</option>
+                                <option value="PE" data-code="+51">Peru (PE)</option>
+                                <option value="PH" data-code="+63">Philippines (PH)</option>
+                                <option value="PN" data-code="+64">Pitcairn (PN)</option>
+                                <option value="PL" data-code="+48">Poland (PL)</option>
+                                <option value="PT" data-code="+351">Portugal (PT)</option>
+                                <option value="PR" data-code="+1 787">Puerto Rico (PR)</option>
+                                <option value="QA" data-code="+974">Qatar (QA)</option>
+                                <option value="RE" data-code="+262">Réunion (RE)</option>
+                                <option value="RO" data-code="+40">Romania (RO)</option>
+                                <option value="RU" data-code="+7">Russian Federation (RU)</option>
+                                <option value="RW" data-code="+250">Rwanda (RW)</option>
+                                <option value="BL" data-code="+590">Saint Barthélemy (BL)</option>
+                                <option value="SH" data-code="+290">
+                                Saint Helena, Ascension and Tristan da Cunha (SH)
+                                </option>
+                                <option value="KN" data-code="+1 869">
+                                Saint Kitts and Nevis (KN)
+                                </option>
+                                <option value="LC" data-code="+1 758">Saint Lucia (LC)</option>
+                                <option value="MF" data-code="+590">
+                                Saint Martin (French part) (MF)
+                                </option>
+                                <option value="PM" data-code="+508">
+                                Saint Pierre and Miquelon (PM)
+                                </option>
+                                <option value="VC" data-code="+1 784">
+                                Saint Vincent and the Grenadines (VC)
+                                </option>
+                                <option value="WS" data-code="+685">Samoa (WS)</option>
+                                <option value="SM" data-code="+378">San Marino (SM)</option>
+                                <option value="ST" data-code="+239">
+                                Sao Tome and Principe (ST)
+                                </option>
+                                <option value="SA" data-code="+966">Saudi Arabia (SA)</option>
+                                <option value="SN" data-code="+221">Senegal (SN)</option>
+                                <option value="RS" data-code="+381">Serbia (RS)</option>
+                                <option value="SC" data-code="+248">Seychelles (SC)</option>
+                                <option value="SL" data-code="+232">Sierra Leone (SL)</option>
+                                <option value="SG" data-code="+65">Singapore (SG)</option>
+                                <option value="SX" data-code="+1 721">
+                                Sint Maarten (Dutch part) (SX)
+                                </option>
+                                <option value="SK" data-code="+421">Slovakia (SK)</option>
+                                <option value="SI" data-code="+386">Slovenia (SI)</option>
+                                <option value="SB" data-code="+677">Solomon Islands (SB)</option>
+                                <option value="SO" data-code="+252">Somalia (SO)</option>
+                                <option value="ZA" data-code="+27">South Africa (ZA)</option>
+                                <option value="GS" data-code="+500">
+                                South Georgia and the South Sandwich Islands (GS)
+                                </option>
+                                <option value="SS" data-code="+211">South Sudan (SS)</option>
+                                <option value="ES" data-code="+34">Spain (ES)</option>
+                                <option value="LK" data-code="+94">Sri Lanka (LK)</option>
+                                <option value="SD" data-code="+249">Sudan (SD)</option>
+                                <option value="SR" data-code="+597">Suriname (SR)</option>
+                                <option value="SJ" data-code="+47">
+                                Svalbard and Jan Mayen (SJ)
+                                </option>
+                                <option value="SZ" data-code="+268">Swaziland (SZ)</option>
+                                <option value="SE" data-code="+46">Sweden (SE)</option>
+                                <option value="CH" data-code="+41">Switzerland (CH)</option>
+                                <option value="SY" data-code="+963">
+                                Syrian Arab Republic (SY)
+                                </option>
+                                <option value="TW" data-code="+886">
+                                Taiwan, Province of China (TW)
+                                </option>
+                                <option value="TJ" data-code="+992">Tajikistan (TJ)</option>
+                                <option value="TZ" data-code="+255">
+                                Tanzania, United Republic of (TZ)
+                                </option>
+                                <option value="TH" data-code="+66">Thailand (TH)</option>
+                                <option value="TL" data-code="+670">Timor-Leste (TL)</option>
+                                <option value="TG" data-code="+228">Togo (TG)</option>
+                                <option value="TK" data-code="+690">Tokelau (TK)</option>
+                                <option value="TO" data-code="+676">Tonga (TO)</option>
+                                <option value="TT" data-code="+1 868">
+                                Trinidad and Tobago (TT)
+                                </option>
+                                <option value="TN" data-code="+216">Tunisia (TN)</option>
+                                <option value="TR" data-code="+90">Turkey (TR)</option>
+                                <option value="TM" data-code="+993">Turkmenistan (TM)</option>
+                                <option value="TC" data-code="+1 649">
+                                Turks and Caicos Islands (TC)
+                                </option>
+                                <option value="TV" data-code="+688">Tuvalu (TV)</option>
+                                <option value="UG" data-code="+256">Uganda (UG)</option>
+                                <option value="UA" data-code="+380">Ukraine (UA)</option>
+                                <option value="AE" data-code="+971">
+                                United Arab Emirates (AE)
+                                </option>
+                                <option value="GB" data-code="+44">United Kingdom (GB)</option>
+                                <option value="US" data-code="+1">United States (US)</option>
+                                <option value="UY" data-code="+598">Uruguay (UY)</option>
+                                <option value="UZ" data-code="+998">Uzbekistan (UZ)</option>
+                                <option value="VU" data-code="+678">Vanuatu (VU)</option>
+                                <option value="VE" data-code="+58">
+                                Venezuela, Bolivarian Republic of (VE)
+                                </option>
+                                <option value="VN" data-code="+84">Viet Nam (VN)</option>
+                                <option value="VG" data-code="+1 284">
+                                Virgin Islands, British (VG)
+                                </option>
+                                <option value="VI" data-code="+1 340">
+                                Virgin Islands, U.S. (VI)
+                                </option>
+                                <option value="WF" data-code="+681">Wallis and Futuna (WF)</option>
+                                <option value="EH" data-code="+212">Western Sahara (EH)</option>
+                                <option value="YE" data-code="+967">Yemen (YE)</option>
+                                <option value="ZM" data-code="+260">Zambia (ZM)</option>
+                                <option value="ZW" data-code="+263">Zimbabwe (ZW)</option>
+                            </select>
+                            <input type="tel" name="Mobile" placeholder="Phone number" class="input" id="phone-id" style="width: 70%" />
+                        </div>
+                        <p class="AlertPara" id="phone-error">Please enter a valid phone number.</p>
+                    </div>
+                </div>
+
+                <div class="b-block">
+                    <div class="full-width">
+                        <label class="label-cls" for="bio-id">Brief biography <span style="color: red;">*</span></label>
+                        <textarea id="bio-id" name="Biography" rows="5" placeholder="Type your biography here..." class="input"></textarea>
+                        <p class="AlertPara" id="bio-error">This field is required.</p>
+                    </div>
+                </div>
+
+                <div class="b-block">
+                    <div class="full-width">
+                        <label class="label-cls" for="topics-id">The topics <span style="color: red;">*</span></label>
+                        <textarea id="topics-id" name="Topic" rows="5" placeholder="List your speaking topics..." class="input"></textarea>
+                        <p class="AlertPara" id="topics-error">This field is required.</p>
+                    </div>
+                </div>
+
+                <div class="b-block">
+                    <div class="full-width">
+                        <label class="label-cls" for="links-id">Please share links to examples of you speaking <span style="color: red;">*</span></label>
+                        <textarea id="links-id" name="Link" rows="5" placeholder="Paste URLs here..." class="input"></textarea>
+                        <p class="AlertPara" id="links-error">This field is required.</p>
+                    </div>
+                </div>
+
+                <div class="checkbox-container">
+                    <label>
+                        <input type="checkbox" name="Confirm" id="gdpr2-id" required value="Yes">
+                        I confirm that I understand and accept the <a style="color: #731819;" class="gdpr-a-tag" href="#t_a_c">terms and conditions</a> listed below<span style="color: red;">*</span>
+                    </label>
+                    <p class="AlertPara" id="gdpr2-error">Please check this box.</p>
+                </div>
+
+                <div class="b-block">
+                    <button type="submit" class="submit-btn" id="submitBtn-s-a">Apply</button>
+                </div>
+            </div>
+        </form>
+    </div> 
+
+   <script>
+const wzcScriptUrl = "https://script.google.com/macros/s/AKfycbxN47Vt_ZrqOdsTGBS0xfQJSGQy6eqURGdtinzvcn5T46FZzjlgxHmJz_ryDHXerChflA/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbxG7OHyMhsH4dDCQAz_Gnr2NNxrD60qPgxsWOuuBetHD-uO3JAkWGQrStryYGsy0DwS/exec";
+const scriptURL_2 = "https://script.google.com/macros/s/AKfycbyOb61CZNP68WeRx1-8JRDrFIMFjfqjWL-dMy54HKjq782h7KE1i_1SEjaSAjc8RVCQgw/exec";
+const form = document.forms["contact-form"];
+
+
+let submitBtn = document.getElementById("submitBtn-s-a");
+
+var select = document.getElementById("country-id");
+let phoneInput = document.getElementById("phone-id");
+
+      // Get the input element
+      var input = document.getElementById("countryCodeInput");
+
+      select.addEventListener("change", function () {
+        console.log(select.value);
+        let v = select.value;
+        let ele = document.querySelector(`option[value=${v}]`).dataset.code;
+        
+        phoneInput.value=ele
+      });
+
+    const fullName = document.getElementById('fullName-id');
+    const dob = document.getElementById('dob-id');
+    const email = document.getElementById('email-id');
+    const gender = document.getElementById('gender-id');
+    const country = document.getElementById('country-id');
+    const phone = document.getElementById('phone-id');
+    const bio = document.getElementById('bio-id');
+    const topics = document.getElementById('topics-id');
+    const links = document.getElementById('links-id');
+    const gdpr2 = document.getElementById('gdpr2-id');   
+    
+    const errors = {
+        fullName: document.getElementById('name-error'),
+        dob: document.getElementById('dob-error'),
+        email: document.getElementById('email-error'),
+        gender: document.getElementById('gender-error'),
+        phone: document.getElementById('phone-error'),
+        bio: document.getElementById('bio-error'),
+        topics: document.getElementById('topics-error'),
+        links: document.getElementById('links-error'),
+        gdpr2: document.getElementById('gdpr2-error')
+    };
+
+    
+    let allElements = [fullName,dob,email,gender,phone,bio,topics,links];
+    let allErrors = Object.values(errors);
+
+
+    allElements.forEach((ele,index)=>{
+        ele.addEventListener("focus",()=>{
+            ele.placeholder = ""
+            allErrors[index].style.visibility = 'hidden'
+        })
+    })
+
+
+
+document.getElementById('contact-form-id').addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent default form submission
+
+ 
+    // Get today's date in YYYY-MM-DD format
+    const today = new Date().toISOString().split('T')[0];
+
+    let isValid = true;
+
+    // Helper to show/hide error
+    function toggleError(condition, errorEl,eleId) {
+        if (condition) {
+            errorEl.style.visibility = "visible";
+            isValid = false;
+            eleId.scrollIntoView({ behavior: "smooth", block: "center" });
+        } else {
+            errorEl.style.visibility = 'hidden';
+        }
+    }
+
+    // Validate fields
+    toggleError(fullName.value.trim() === '', errors.fullName,fullName );
+    toggleError(dob.value === '' || dob.value > today, errors.dob,dob);
+    toggleError(email.value.trim() === '' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value), errors.email,email);
+    toggleError(gender.value === '', errors.gender,gender);
+    toggleError(country.value === '' || phone.value.trim().length < 6, errors.phone,phone);
+    toggleError(bio.value.trim() === '', errors.bio,bio);
+    toggleError(topics.value.trim() === '', errors.topics,topics);
+    toggleError(links.value.trim() === '', errors.links,links);
+    toggleError(!gdpr2.checked, errors.gdpr2);
+
+    // If all validations pass
+    if (isValid) {
+
+       submitBtn.innerText = "submitting...";
+        submitBtn.disabled = true;
+        console.log('Form is valid, send to Google Sheets');
+
+        // 👉 ADD your Google Sheets submission logic here
+        // Example:
+        // document.getElementById('contact-form-id').submit();
+        fetch(scriptURL,{ method: "POST", body: new FormData(form) })
+        fetch(scriptURL_2,{ method: "POST", body: new FormData(form) })
+        .then(()=>{
+            window.location.href="/thank-you/"
+            form.reset()
+        })
+        .catch((err)=>{
+            console.error('Error:', err);
+        })
+        
+    }
+});
+
+
+
+</script>
+
+</body>
+</html>
